@@ -1,4 +1,5 @@
 local highlight = require('lualine.highlight')
+local utils = require('lualine.utils.utils')
 
 local LspProgress = require('lualine.component'):extend()
 
@@ -63,7 +64,7 @@ end
 
 LspProgress.update_status = function(self)
 	self:update_progress()
-	return self.progress_message
+	return utils.stl_escape(self.progress_message)
 end
 
 
